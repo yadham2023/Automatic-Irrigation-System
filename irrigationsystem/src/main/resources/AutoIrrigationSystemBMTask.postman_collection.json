@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "2dc2998a-d98c-458b-b7d2-3a43682d8250",
+		"name": "AutoIrrigationSystemBMTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13492415"
+	},
+	"item": [
+		{
+			"name": "plotofland",
+			"item": [
+				{
+					"name": "addPlot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"name\": \"ahmed\",\r\n  \"area\": 4.4,\r\n  \"cropType\": \"type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editPlot",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"bankmisr\",\r\n  \"area\": 70,\r\n  \"cropType\": \"wheat\",\r\n  \"irrigationSlots\": [\r\n        {\r\n            \"startTime\": \"2022-05-17T14:07:48.2326945\",\r\n            \"endTime\": \"2022-05-17T14:07:48.2326945\",\r\n            \"status\": \"IDLE\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plots/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plots",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plots/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plots",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPlotById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plots/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plots",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPlotsWithPagination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plots?pageNo=1&pageSize=2&sortBy=id&sortDir=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plots"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDir",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IrrigationSlot",
+			"item": [
+				{
+					"name": "reserveIrrigationSlot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startTime\": \"2023-05-15T18:28:17.995128700\",\r\n  \"endTime\": \"2023-05-15T18:28:17.995128700\",\r\n  \"status\": \"IDLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plots/4/irrigationSlot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plots",
+								"4",
+								"irrigationSlot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateIrrigationSlotStatus",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getIrrigationSlotByPlotId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAllIrrigationSlots",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SensorDevice",
+			"item": [
+				{
+					"name": "irrigate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plotId\": 1,\r\n  \"slotId\": 1,\r\n  \"waterAmount\": 900.0,\r\n  \"integrationFramework\": \"REST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/irrigation-api/irrigate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"irrigation-api",
+								"irrigate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
