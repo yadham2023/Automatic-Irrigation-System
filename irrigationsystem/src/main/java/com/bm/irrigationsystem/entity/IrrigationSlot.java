@@ -4,11 +4,13 @@ import com.bm.irrigationsystem.utilities.IrrigationStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@ToString
 @Getter
 @Setter
 @Entity
@@ -29,6 +31,7 @@ public class IrrigationSlot {
     @Enumerated(EnumType.STRING)
     private IrrigationStatus status;
 
+    @ToString.Exclude
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "plot_id", nullable = false)

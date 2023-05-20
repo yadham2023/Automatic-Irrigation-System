@@ -1,13 +1,14 @@
 package com.bm.irrigationsystem.entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Getter
 @Setter

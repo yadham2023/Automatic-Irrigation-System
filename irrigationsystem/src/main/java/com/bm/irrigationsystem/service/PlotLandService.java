@@ -79,8 +79,8 @@ public class PlotLandService {
     }
 
     public PlotLandDto getPlotById(Long plotId) {
-        PlotOfLand plotToBeDeleted = plotRepository.findById(plotId).orElseThrow(() -> new ResourceNotFoundException("PlotOfLand", "id", plotId));
-        return mapToDto(plotToBeDeleted);
+        PlotOfLand plot = plotRepository.findById(plotId).orElseThrow(() -> new ResourceNotFoundException("PlotOfLand", "id", plotId));
+        return mapToDto(plot);
     }
 
     public PlotOfLand mapToEntity(PlotLandDto plotDto) {
