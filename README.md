@@ -13,3 +13,7 @@ Steps To Run The App:
 2-using this command docker-compose -f docker-compose.yml up
 3-when the application starts it will automatically generates the ddl and create tables for you
 
+attached sample request file that can be imported in postman as a collection:
+in the resource folder for the below endpoints
+plotofland,irrigationslot,sensorDevice.
+
